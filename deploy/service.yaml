@@ -1,15 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: golist-frontend
   labels:
     app: golist-frontend
-  name: golist-frontend
+    tier: ui
 spec:
+  type: ClusterIP
   ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
   selector:
     app: golist-frontend
-status:
-  loadBalancer: {}
