@@ -1,7 +1,7 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: golist-frontend
+  name: golist
   namespace: golist
 spec:
   path: /
