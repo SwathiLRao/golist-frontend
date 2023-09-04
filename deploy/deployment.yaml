@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: golist-frontend
   labels:
     app: golist-frontend
-  name: golist-frontend
+    tier: ui
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: golist-frontend
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: golist-frontend
     spec:
       containers:
-      - image: quay.io/christianh814/golist-frontend:latest
-        name: golist-frontend
-        ports:
+        - name: golist-frontend
+          image: quay.io/christianh814/golist-frontend:latest
+          imagePullPolicy: Always
+          ports:
             - name: http
               containerPort: 8080
               protocol: TCP
-        env:
+          env:
             - name: GOLIST_API_URL
               value: "http://golist-api:8080"
