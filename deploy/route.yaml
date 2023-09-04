@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: golist
+  namespace: golist
+spec:
+  path: /
+  to:
+    kind: Service
+    name: golist-frontend
+  port:
+    targetPort: http
