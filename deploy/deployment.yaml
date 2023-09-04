@@ -33,9 +33,6 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 10
           timeoutSeconds: 3
-        volumeMounts:
-        - name: config-volume
-          mountPath: /opt/app-root/src/appconfig
         resources: {}
         ports:
             - name: http
