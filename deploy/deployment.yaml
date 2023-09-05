@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: golist-frontend
-          image: saianilkumardeyyala/qod-web
+          image: quay.io/christianh814/golist-frontend:latest
           imagePullPolicy: Always
           ports:
             - name: http
